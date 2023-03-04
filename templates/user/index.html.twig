@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12 center">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <h1>Liste des utilisateurs</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if newUser == true%}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert">
+                    Utilisateur créé, l'utilisateur recevra ces informations de connexions sous peu.
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if removeUser == true%}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert">
+                    L'utilisateur à bien été supprimé.
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-12">
+                <div class="row mb-4">
+                    <div class="col-md-1">
+                        <a href="{{ path('app_user_new') }}" class="btn btn-primary btn-user btn-block">+</a>
+                    </div>
+                    <div class="col-md-11">
+                        <form action="{{ path('app_user_index') }}" method="GET">
+                            <div class="input-group">
+                                <div class="form-outline col-md-10">
+                                    <input class="form-control" type="text" id="search" name="search" {% if search is null %}placeholder="Rechercher..."{% else %}value="{{ search }}"{% endif %}/>
+                                </div>
+                                <button type="submit" class="btn btn-primary" title="Valider ma recherche">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <a href="{{ path('app_user_index') }}" class="btn btn-danger" title="Effacer ma recherche">X</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col"><small>IDENTIFIANT</small></th>
+                    <th scope="col"><small>NOM</small></th>
+                    <th scope="col"><small>PRENOM</small></th>
+                    <th scope="col"><small>EMAIL</small></th>
+                    <th scope="col"><small>MOBILE</small></th>
+                    <th scope="col"><small>ROLE</small></th>
+                    <th scope="col"><small>ACTION(S)</small></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                        <tr>
+                                <td>{% if userConnect.identifier == user.identifier %}{{ user.identifier }}{% else %}<a href="{{ path('app_user_show', {'id': user.id}) }}">{{ user.identifier }}</a>{% endif %}</td>
+                                <td>{{ user.lastName|upper }}</td>
+                                <td>{{ user.firstName|capitalize }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.mobile }}</td>
+                                <td>{{ user.roles.0 == "ROLE_ADMIN" ? "Administrateur":"Utilisateur" }}</td>
+                                <td>
+                                    <div class="row">
+                                        {% if userConnect.identifier != user.identifier %}
+                                            <div class="mx-1">
+                                                <a href="{{ path('app_user_show', {'id': user.id}) }}" type="button" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye m-0"></i></a>
+                                            </div>
+                                            {% if configuration(constant('App\\Enum\\Configuration\\ModuleEnum::GED'), "active") == true %}
+                                                <div class="mx-1">
+                                                    <a href="{{ path('app_document_show_by_user', {'id_user': user.id}) }}" type="button" class="btn btn-success btn-sm"><i class="fa-solid fa-file m-0"></i></a>
+                                                </div>
+                                            {% endif %}
+                                            {% if configuration(constant('App\\Enum\\Configuration\\ModuleEnum::BADGE_READER'), "active") == true %}
+                                                <div class="mx-1">
+                                                    <a href="{{ path('app_badge_reader_show_by_user', {'id_user': user.id}) }}" type="button" class="btn btn-success btn-sm">B</a>
+                                                </div>
+                                            {% endif %}
+                                            <div class="mx-1">
+                                                {{ include('user/_delete_form.html.twig') }}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </td>
+                        </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

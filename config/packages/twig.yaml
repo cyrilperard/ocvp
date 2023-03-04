@@ -1,0 +1,9 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    globals:
+        #app_settings_ged: "%env(SETTING_GED)%"
+        #app_settings_badge_reader: "%env(SETTING_BADGE_READER)%"
+
+when@test:
+    twig:
+        strict_variables: true

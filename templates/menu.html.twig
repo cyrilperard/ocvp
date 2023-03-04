@@ -1,0 +1,15 @@
+<div class="masthead clearfix">
+    <div class="container inner">
+        <h3 class="masthead-brand">OCVP</h3>
+        <nav>
+            <ul class="nav masthead-nav">
+                <li class="active"><a href="#">Accueil</a></li>
+                {% if is_granted('ROLE_USER')%}
+                    <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+                {% else %}
+                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>

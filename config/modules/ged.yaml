@@ -1,0 +1,4 @@
+settings:
+    active: true
+    name: 'Gestion éléctronique de documents'
+    parameters: {  }

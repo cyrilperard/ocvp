@@ -1,0 +1,58 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <p class="mb-0">Général</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row m-2">
+        <div class="col-sm-4">
+            <p class="mb-0">Nom<sup style="color: red">*</sup></p>
+        </div>
+        <div class="col-sm-8">
+            <p class="text-muted mb-0">{{ form_widget(form.last_name) }}</p>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-sm-4">
+            <p class="mb-0">Prénom<sup style="color: red">*</sup></p>
+        </div>
+        <div class="col-sm-8">
+            <p class="text-muted mb-0">{{ form_widget(form.first_name) }}</p>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-sm-4">
+            <p class="mb-0">Adresse e-mail<sup style="color: red">*</sup></p>
+        </div>
+        <div class="col-sm-8">
+            <p class="text-muted mb-0">{{ form_widget(form.email) }}</p>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-sm-4">
+            <p class="mb-0">Téléphone</p>
+        </div>
+        <div class="col-sm-8">
+            <p class="text-muted mb-0">{{ form_widget(form.telephone) }}</p>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-sm-4">
+            <p class="mb-0">Mobile<sup style="color: red">*</sup></p>
+        </div>
+        <div class="col-sm-8">
+            <p class="text-muted mb-0">{{ form_widget(form.mobile) }}</p>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-sm-4">
+            <p class="mb-0">Date de naissance<sup style="color: red">*</sup></p>
+        </div>
+        <div class="col-sm-8">
+            <p class="text-muted mb-0">{{ form_widget(form.birthday) }}</p>
+        </div>
+    </div>
+    <hr>
+    <button class="btn btn-primary btn-user btn-block">{{ button_label|default("Créer l'utilisateur") }}</button>
+{{ form_end(form) }}

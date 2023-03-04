@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>OCVP</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <div class="site-wrapper">
+
+        <div class="site-wrapper-inner">
+
+            <div class="container">
+                {% include 'menu.html.twig' %}
+                <div class="inner cover">
+                    <h1 class="cover-heading">Bienvenue.</h1>
+                    <p class="lead">Voici la page d'accueil de OCVP, vous pouvez naviguer grâce à la barre de navigation.</p>
+                    <p class="lead">
+                        <a href="#" class="btn btn-lg btn-default">Lire plus</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block body %}{% endblock %}
+
+</div>
+{% include 'footer.html.twig' %}
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+<style>
+    /*
+ * Globals
+ */
+
+    /* Links */
+    a,
+    a:focus,
+    a:hover {
+        color: #fff;
+    }
+
+    /* Custom default button */
+    .btn-default,
+    .btn-default:hover,
+    .btn-default:focus {
+        color: #333;
+        text-shadow: none; /* Prevent inheritence from `body` */
+        background-color: #fff;
+        border: 1px solid #fff;
+    }
+
+
+    /*
+     * Base structure
+     */
+
+    html,
+    body {
+        height: 100%;
+        background-color: #fff;
+    }
+    body {
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    }
+
+    /* Extra markup and styles for table-esque vertical and horizontal centering */
+    .site-wrapper {
+        display: table;
+        width: 100%;
+        height: 600px;
+        background-color: #333;
+        /*height: 100%; */
+        /*min-height: 100%;*/
+    }
+    .site-wrapper-inner {
+        display: table-cell;
+        vertical-align: top;
+    }
+    .cover-container {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /* Padding for spacing */
+    .inner {
+        padding: 30px;
+    }
+
+
+    /*
+     * Header
+     */
+    .masthead-brand {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .masthead-nav > li {
+        display: inline-block !important;
+    }
+    .masthead-nav > li + li {
+        margin-left: 20px !important;
+    }
+    .masthead-nav > li > a {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+        color: #fff !important; /* IE8 proofing */
+        color: rgba(255,255,255,.75) !important;
+        border-bottom: 2px solid transparent !important;
+    }
+    .masthead-nav > li > a:hover,
+    .masthead-nav > li > a:focus {
+        background-color: transparent !important;
+        border-bottom-color: #a9a9a9 !important;
+        border-bottom-color: rgba(255,255,255,.25) !important;
+    }
+    .masthead-nav > .active > a,
+    .masthead-nav > .active > a:hover,
+    .masthead-nav > .active > a:focus {
+        color: #fff !important;
+        border-bottom-color: #fff !important;
+    }
+
+    @media (min-width: 768px) {
+        .masthead-brand {
+            float: left;
+        }
+        .masthead-nav {
+            float: right;
+        }
+    }
+
+
+    /*
+     * Cover
+     */
+
+    .cover {
+        padding: 0 20px;
+    }
+    .cover .btn-lg {
+        padding: 10px 20px;
+        font-weight: bold;
+    }
+
+    /*
+     * Affix and center
+     */
+
+    @media (min-width: 768px) {
+        /* Pull out the header and footer */
+        .masthead {
+            position: fixed;
+            top: 0;
+        }
+        /* Start the vertical centering */
+        .site-wrapper-inner {
+            vertical-align: middle;
+        }
+
+    }
+
+</style>
+<!-- Bootstrap core JavaScript-->
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="/assets/js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="/assets/vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="/assets/js/demo/chart-area-demo.js"></script>
+<script src="/assets/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
+

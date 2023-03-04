@@ -1,0 +1,4 @@
+settings:
+    active: true
+    name: Badgeuse
+    parameters: { time: { start: 9, end: 18, work: 32400, break: 15 } }
