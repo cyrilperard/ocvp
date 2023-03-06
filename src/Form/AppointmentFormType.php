@@ -4,9 +4,11 @@ namespace App\Form;
 
 use App\Entity\Appointment;
 use App\Entity\User;
+use EasyCorp\Bundle\EasyAdminBundle\Field\HiddenField;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -34,6 +36,20 @@ class AppointmentFormType extends AbstractType
                         'message' => 'Email ne peut pas être vide'
                     ]),
                 ],],)
+            ->add('phone', TextType::class, [
+                'required' => true,
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Votre téléphone'
+                ],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Le téléphone ne peut pas être vide'
+                    ]),
+                ],],)
+            ->add('houre', HiddenType::class, [
+                'required' => true,
+            ],)
         ;
     }
 

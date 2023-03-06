@@ -38,13 +38,14 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $controle_houre = $appointmentRepository->findBy(array("houre" => $request->query->get("houre"), "date_appointment" => new \DateTime($request->query->get("date"))));
+            $controle_houre = $appointmentRepository->findBy(array("houre" => $_POST["houre_selected"], "date_appointment" => new \DateTime($request->query->get("date"))));
             if(empty($controle_houre)){
                 $password = GeneratePassword::create(8);
 
                 $appointment->setDay("Monday");
-                $appointment->setHoure($request->query->get("houre"));
+                $appointment->setHoure($_POST["houre_selected"]);
                 $appointment->setEmail($form->getData()->getEmail());
+                $appointment->setPhone($form->getData()->getPhone());
                 $appointment->setDateAppointment(new \DateTime($request->query->get("date")));
                 $appointment->setDateAdd(new \DateTime(date("Y-m-d")));
 

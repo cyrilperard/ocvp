@@ -17,9 +17,9 @@
                         <div class="row">
                             {% for houre, status in current_houre_list %}
                                 {% if status == "available" %}
-                                <div class="col-md-2" style="cursor: pointer; margin: 10px; text-align: center; background-color: #ED242E; border-radius: 15px; padding: 10px">
-                                    <a style="text-decoration: none; color: white;" href="{{ path('app_appointment', { 'houre': houre, 'date': "06-03-2023" }) }}">{{ houre }}h</a>
-                                </div>
+                                <span class="col-md-2 houre_available" style="color: white;cursor: pointer; margin: 10px; text-align: center; background-color: #ED242E; border-radius: 15px; padding: 10px" data-value="{{ houre }}" data-toggle="modal" data-target="#removeCompanyModal">
+                                    {{ houre }}h
+                                </span>
                                 {% endif %}
                                 {% if status == "not available" %}
                                     <div class="col-md-2" style="margin: 10px; text-align: center; background-color: lightgrey; color: white; border-radius: 15px; padding: 10px">
@@ -31,25 +31,48 @@
                     </form>
                 </div>
                 <div class="col-md-6">
-                    {% if houre_param is empty %}
-                        <div class="pt-5">
-                            <div class="p-3">
-                                <p>Choisissez une date et une heure pour votre rendez-vous.</p>
-                            </div>
+                    <div class="pt-5">
+                        <div class="p-3">
+                            <p>Choisissez une date et une heure pour votre rendez-vous.</p>
                         </div>
-                    {% endif %}
-                    {% if houre_param is not empty %}
-                        {{ form_start(appointmentForm) }}
-                            <div class="form-group row">
-                                {{ form_label(appointmentForm.email) }}
-                                {{ form_widget(appointmentForm.email) }}
-                                <div class="text-danger">{{ form_errors(appointmentForm.email) }}</div>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-user btn-block">Prendre rendez-vous</button>
-                        {{ form_end(appointmentForm) }}
-                    {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal fade" id="removeCompanyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Formulaire</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ form_start(appointmentForm) }}
+                    <input name="houre_selected" id="houre_selected" type="hidden" value="" />
+                    <div class="form-group row">
+                        {{ form_label(appointmentForm.email) }}
+                        {{ form_widget(appointmentForm.email) }}
+                        <div class="text-danger">{{ form_errors(appointmentForm.email) }}</div>
+                    </div>
+                    <div class="form-group row">
+                        {{ form_label(appointmentForm.phone) }}
+                        {{ form_widget(appointmentForm.phone) }}
+                        <div class="text-danger">{{ form_errors(appointmentForm.phone) }}</div>
+                    </div>
+                    <button style="background-color: #ED242E; border: none" type="submit" class="btn btn-primary btn-user btn-block">Prendre rendez-vous</button>
+                    {{ form_end(appointmentForm) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    $('.houre_available').click(function(event) {
+        $("#houre_selected").val($(this).attr("data-value"));
+    });
+    </script>
 {% endblock %}

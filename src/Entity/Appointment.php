@@ -29,6 +29,9 @@ class Appointment
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_appointment = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $phone = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Appointment
     public function setDateAppointment(\DateTimeInterface $date_appointment): self
     {
         $this->date_appointment = $date_appointment;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
 
         return $this;
     }
