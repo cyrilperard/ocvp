@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="contact mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage text_align_left">
+                        <h2>Prenez render-vous en ligne</h2>
+                        <p>Prenez render-vous en ligne ou par téléphone pour parler de votre projet à notre équipe.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="request" class="main_form">
+                        <div class="row">
+                            {% for houre, status in current_houre_list %}
+                                {% if status == "available" %}
+                                <div class="col-md-2" style="cursor: pointer; margin: 10px; text-align: center; background-color: #ED242E; border-radius: 15px; padding: 10px">
+                                    <a style="text-decoration: none; color: white;" href="{{ path('app_appointment', { 'houre': houre, 'date': "06-03-2023" }) }}">{{ houre }}h</a>
+                                </div>
+                                {% endif %}
+                                {% if status == "not available" %}
+                                    <div class="col-md-2" style="margin: 10px; text-align: center; background-color: lightgrey; color: white; border-radius: 15px; padding: 10px">
+                                        {{ houre }}h
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    {% if houre_param is empty %}
+                        <div class="pt-5">
+                            <div class="p-3">
+                                <p>Choisissez une date et une heure pour votre rendez-vous.</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if houre_param is not empty %}
+                        {{ form_start(appointmentForm) }}
+                            <div class="form-group row">
+                                {{ form_label(appointmentForm.email) }}
+                                {{ form_widget(appointmentForm.email) }}
+                                <div class="text-danger">{{ form_errors(appointmentForm.email) }}</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-user btn-block">Prendre rendez-vous</button>
+                        {{ form_end(appointmentForm) }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -14,6 +14,8 @@ class HomeController extends AbstractController
     {
         return $this->render('home/home.html.twig', [
             'controller_name' => 'HomeController',
+            'first_title' => "OCVP Solutions",
+            'second_title' => "On créer votre projet"
         ]);
     }
 }

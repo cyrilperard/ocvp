@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="contact mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 center">
+                    {% if status == "true" %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="titlepage text_align_center">
+                                    <h2>Merci</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text_align_center">
+                                <p>Merci d'avoir pris rendez-vous avec notre équipe, vous allez recevoir un e-mail sur l'adresse mail que vous nous avez fourni avec les informations nécessaire.</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if status == "false" %}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="titlepage text_align_center">
+                                    <h2>OUPS</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row text_align_center">
+                            <div class="col-md-12 center">
+                                <p>Un rendez-vous à déja été pris sur cet horraire</p>
+                            </div>
+                            <div class="col-md-12">
+                                <a style="text-decoration: none; color: white;" href="{{ path('app_appointment') }}">
+                                    <div style="background-color: #ED242E; padding: 15px; width: 35%">Je prends rendez-vous sur un autre horraire</div>
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

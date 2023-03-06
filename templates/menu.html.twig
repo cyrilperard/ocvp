@@ -1,15 +1,38 @@
-<div class="masthead clearfix">
-    <div class="container inner">
-        <h3 class="masthead-brand">OCVP</h3>
-        <nav>
-            <ul class="nav masthead-nav">
-                <li class="active"><a href="#">Accueil</a></li>
-                {% if is_granted('ROLE_USER')%}
-                    <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
-                {% else %}
-                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
-                {% endif %}
-            </ul>
-        </nav>
+<header class="header-area">
+    <div class="left">
+        <a href="Javascript:void(0)"><i class="fa fa-search" aria-hidden="true"></i></a>
     </div>
-</div>
+    <div class="right">
+        <a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a>
+    </div>
+    <div class="container">
+        <div class="row d_flex">
+            <div class="col-sm-3 logo_sm">
+                <div class="logo">
+                    <a href="index.html"></a>
+                </div>
+            </div>
+            <div class="col-lg-10 offset-lg-1 col-md-12 col-sm-9">
+                <div class="navbar-area">
+                    <nav class="site-navbar text-center">
+                        <ul>
+                            <li><a class="active" href="{{ path('app_home') }}">Accueil</a></li>
+                            <li><a href="index.html">Services</a></li>
+                            <li><a href="doctores.html">Blog</a></li>
+                            <li><a href="index.html">L'agence</a></li>
+                            <li><a href="{{ path('app_contact') }}">Contact</a></li>
+                            {% if is_granted('ROLE_USER')%}
+                                <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+                            {% else %}
+                                <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                            {% endif %}
+                        </ul>
+                        <button class="nav-toggler">
+                            <span></span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
