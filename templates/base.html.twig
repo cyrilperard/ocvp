@@ -10,7 +10,7 @@
     <!-- site metas -->
     <title>OCVP Solutions</title>
     <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="description" content="Agence Web en ligne, nosu proposons nous service dans le cadre de la création de sites et applications web, d'extranets, intranets. Nous proposons également de l'hebergement web.">
     <meta name="author" content="">
     <!-- bootstrap css -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
@@ -57,9 +57,11 @@
                     <div class="carousel-caption cuplle">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-10">
                                     <div class="photog">
-                                        <h1>{{ first_title }} <br> {{ second_title }}</h1>
+                                        <h1>{{ first_title }}</h1>
+                                        <br>
+                                        <h2>{{ second_title }}</h2>
                                         <!--<a class="read_more" href="javascript:void(0)" >Read More</a>
                                         <a class="read_more" href="about.html" >About Us</a> -->
                                     </div>
@@ -118,6 +120,42 @@
 <!--  footer -->
 {% include 'footer.html.twig' %}
 <!-- end footer -->
+<style>
+    .header-area.fixed{
+        transition-property: margin-top,margin-right;
+        transition-duration: .5s,.1s;
+        transition-delay: 0;
+        transition-timing-function: cubic-bezier(0.22,0.99,0.62,1);
+        -moz-transition-property: margin-top,margin-right;
+        -moz-transition-duration: .5s,.1s;
+        -moz-transition-delay: 0;
+        -moz-transition-timing-function: cubic-bezier(0.22,0.99,0.62,1);
+        -o-transition-property: margin-top,margin-right;
+        -o-transition-duration: .5s,.1s;
+        -o-transition-delay: 0;
+        -o-transition-timing-function: cubic-bezier(0.22,0.99,0.62,1);
+        -ms-transition-property: margin-top,margin-right;
+        -ms-transition-duration: .5s,.1s;
+        -ms-transition-delay: 0;
+        -ms-transition-timing-function: cubic-bezier(0.22,0.99,0.62,1);
+        -webkit-transition-property: margin-top,margin-right;
+        -webkit-transition-duration: .5s,.1s;
+        -webkit-transition-delay: 0;
+        -webkit-transition-timing-function: cubic-bezier(0.22,0.99,0.62,1);
+        position:fixed;
+        top:0;
+        z-index:1000;
+    }
+</style>
+<script>
+    $(window).scroll(function (event) {
+        // A chaque fois que l'utilisateur va scroller (descendre la page)
+        var y = $(this).scrollTop(); // On récupérer la valeur du scroll vertical
+
+        //si cette valeur > à 200 on ajouter la class
+            $('.header-area').addClass('fixed');
+    });
+</script>
 <!-- Javascript files-->
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/bootstrap.bundle.min.js"></script>

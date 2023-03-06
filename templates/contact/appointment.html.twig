@@ -53,15 +53,17 @@
                 <div class="modal-body">
                     {{ form_start(appointmentForm) }}
                     <input name="houre_selected" id="houre_selected" type="hidden" value="" />
-                    <div class="form-group row">
-                        {{ form_label(appointmentForm.email) }}
-                        {{ form_widget(appointmentForm.email) }}
-                        <div class="text-danger">{{ form_errors(appointmentForm.email) }}</div>
+                    <div class="row my-2">
+                        <div class="col-md-12">
+                            {{ form_widget(appointmentForm.email) }}
+                            <div class="text-danger">{{ form_errors(appointmentForm.email) }}</div>
+                        </div>
                     </div>
-                    <div class="form-group row">
-                        {{ form_label(appointmentForm.phone) }}
-                        {{ form_widget(appointmentForm.phone) }}
-                        <div class="text-danger">{{ form_errors(appointmentForm.phone) }}</div>
+                    <div class="row my-2">
+                        <div class="col-md-12">
+                            {{ form_widget(appointmentForm.phone) }}
+                            <div class="text-danger">{{ form_errors(appointmentForm.phone) }}</div>
+                        </div>
                     </div>
                     <button style="background-color: #ED242E; border: none" type="submit" class="btn btn-primary btn-user btn-block">Prendre rendez-vous</button>
                     {{ form_end(appointmentForm) }}
@@ -69,7 +71,6 @@
             </div>
         </div>
     </div>
-
     <script>
     $('.houre_available').click(function(event) {
         $("#houre_selected").val($(this).attr("data-value"));

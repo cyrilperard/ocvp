@@ -13,25 +13,33 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <form id="request" class="main_form">
-                        <div class="row">
-                            <div class="col-md-12 ">
-                                <input class="contactus" placeholder="Nom complet" type="type" name=" Name">
-                            </div>
-                            <div class="col-md-12">
-                                <input class="contactus" placeholder="Téléphone" type="type" name="Phone Number">
-                            </div>
-                            <div class="col-md-12">
-                                <input class="contactus" placeholder="Email" type="type" name="Email">
-                            </div>
-                            <div class="col-md-12">
-                                <textarea class="textarea" placeholder="Message" type="type" Message="Name"></textarea>
-                            </div>
-                            <div class="col-md-12">
-                                <button class="send_btn">Envoyer</button>
-                            </div>
+                    {{ form_start(contactForm) }}
+                    <div class="row my-4">
+                        <div class="col-md-12">
+                            {{ form_widget(contactForm.fullname) }}
+                            <div class="text-danger">{{ form_errors(contactForm.fullname) }}</div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-md-12">
+                            {{ form_widget(contactForm.phone) }}
+                            <div class="text-danger">{{ form_errors(contactForm.phone) }}</div>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-md-12">
+                            {{ form_widget(contactForm.email) }}
+                            <div class="text-danger">{{ form_errors(contactForm.email) }}</div>
+                        </div>
+                    </div>
+                    <div class="row my-4">
+                        <div class="col-md-12">
+                            {{ form_widget(contactForm.message) }}
+                            <div class="text-danger">{{ form_errors(contactForm.message) }}</div>
+                        </div>
+                    </div>
+                    <button style="background-color: #ED242E; border: none; padding: 20px" type="submit" class="btn btn-primary btn-user btn-block">Envoyer</button>
+                    {{ form_end(contactForm) }}
                 </div>
                 <div class="col-md-6">
                     <div class="map-responsive">

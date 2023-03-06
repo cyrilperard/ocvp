@@ -344,7 +344,7 @@ button {
 }
 .site-navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -488,11 +488,11 @@ button {
 /** banner section **/
 
 .full_bg {
-     background: url(../images/banner.png);
+     background: url(../images/banner.jpg);
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
-     height: 100vh;
+     height: 70vh;
     padding-bottom: 150px;
      position: relative;
 }
@@ -551,11 +551,19 @@ button {
 .photog h1 {
      padding: 0;
      font-size: 89px;
-     line-height: 90px;
+     line-height: 100px;
      color: #fff;
      font-weight: bold;
      text-align: left;
-     padding-bottom: 70px;
+}
+
+.photog h2 {
+    padding: 0;
+    font-size: 60px;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 20px;
 }
 
 
