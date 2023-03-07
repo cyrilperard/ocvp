@@ -316,7 +316,7 @@ button {
 /*-- header --*/
 
 .header-area  {
-     padding: 30px 16px;
+     /*padding: 30px 16px;*/
      color: #f1f1f1;
      width: 100%;
      z-index: 9999999;
@@ -343,7 +343,7 @@ button {
     right: 26px;
 }
 .site-navbar {
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     align-items: center;
 }
@@ -353,6 +353,10 @@ button {
     padding: 0;
     list-style: none;
     display: flex;
+    align-items: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .site-navbar ul li a {
@@ -361,10 +365,11 @@ button {
     display: block;
     text-decoration: none;
     text-transform: uppercase;
+    padding: 29px;
 }
 
 .site-navbar ul li {
-    padding-right: 70px;
+    /*padding-right: 70px;*/
 }
 
 .site-navbar ul li:last-child {
@@ -373,9 +378,13 @@ button {
 
 .site-navbar ul li a:hover {
     color: #00132b;
+    background-color: white;
+    padding: 29px;
 }
 .site-navbar ul li a.active {
     color: #00132b;
+    background-color: white;
+    padding: 29px;
 }
 
 /* navbar regular css end */
