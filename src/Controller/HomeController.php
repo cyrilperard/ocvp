@@ -13,6 +13,7 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         return $this->render('home/home.html.twig', [
+            'pageTitle' => 'home',
             'first_title' => "OCVP Solutions",
             'second_title' => "On créer votre projet"
         ]);
