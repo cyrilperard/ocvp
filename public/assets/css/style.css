@@ -575,6 +575,15 @@ button {
     padding-bottom: 20px;
 }
 
+.photog h3 {
+    padding: 0;
+    font-size: 50px;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
 
 .photog .read_more {
     margin-right: 15px;
@@ -640,6 +649,14 @@ button {
     margin-top: -130px;
 }
 
+.aboutService {
+    background: #fff;
+    padding: 50px 50px;
+    margin: auto;
+    box-shadow: 3px 0 62px rgba(13, 3, 3, 0.18);
+    border-radius: 60px;
+}
+
 .container_width {max-width: 1380px;
  padding: 0 15px;
  display: block;
@@ -657,6 +674,14 @@ button {
     padding-bottom: 18px;
 }
 
+.aboutService .titlepage {
+    padding-bottom: 0;
+}
+.aboutService .titlepage h2 {
+    position: relative;
+    padding-bottom: 18px;
+}
+
 .about .titlepage h2::before {
     position: absolute;
     content: "";
@@ -668,6 +693,24 @@ button {
     border-radius: 20px;
 }
 .about .titlepage p {
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 30px;
+    color: #111111;
+    padding: 35px 0px 50px 0px;
+}
+
+.aboutService .titlepage h2::before {
+    position: absolute;
+    content: "";
+    bottom: 0px;
+    background: #ed1c24;
+    width: 93px;
+    height: 11px;
+    left: 0;
+    border-radius: 20px;
+}
+.aboutService .titlepage p {
     font-weight: normal;
     font-size: 17px;
     line-height: 30px;

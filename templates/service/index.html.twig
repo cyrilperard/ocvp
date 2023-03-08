@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="contact mb-3">
+    <div class="contact mb-3" style="background-color: #FDFDFD">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="titlepage text_align_left">
+                    <div class="titlepage text_align_center">
                         <h2>Nos services</h2>
                         <p>Retrouvez nos services.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="row col-md-12">
-                    <div class="row col-md-6">
+                <div class="row col-md-12 my-2">
+                    <div class="row col-md-9">
                         <div class="col-md-12">
                             <h3>Site Web</h3>
                         </div>
@@ -24,15 +24,15 @@
                             <a href="{{ path('app_service_website') }}" style="text-decoration: none; background-color: #ED242E; color: white; padding: 20px; ">Lire plus</a>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <img src="/assets/images/website.jpg" width="350" height="350">
                     </div>
                 </div>
-                <div class="row col-md-12">
-                    <div class="col-md-6">
+                <div class="row col-md-12 my-2">
+                    <div class="col-md-3">
                         <img src="/assets/images/application.jpg" width="350" height="350">
                     </div>
-                    <div class="row col-md-6">
+                    <div class="row col-md-9">
                         <div class="col-md-12">
                             <h3>Application web</h3>
                         </div>
@@ -44,8 +44,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row col-md-12">
-                    <div class="row col-md-6">
+                <div class="row col-md-12 my-2">
+                    <div class="row col-md-9">
                         <div class="col-md-12">
                             <h3>Hebergement Web</h3>
                         </div>
@@ -56,15 +56,15 @@
                             <a href="{{ path('app_service_hosting') }}" style="text-decoration: none; background-color: #ED242E; color: white; padding: 20px; ">Lire plus</a>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <img src="/assets/images/hebergement.jpg" width="350" height="350">
                     </div>
                 </div>
-                <div class="row col-md-12">
-                    <div class="col-md-6">
+                <div class="row col-md-12 my-2">
+                    <div class="col-md-3">
                         <img src="/assets/images/extranet.jpg" width="350" height="350">
                     </div>
-                    <div class="row col-md-6">
+                    <div class="row col-md-9">
                         <div class="col-md-12">
                             <h3>Extranet</h3>
                         </div>
@@ -76,8 +76,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row col-md-12">
-                    <div class="row col-md-6">
+                <div class="row col-md-12 my-2">
+                    <div class="row col-md-9">
                         <div class="col-md-12">
                             <h3>Intranet</h3>
                         </div>
@@ -88,11 +88,12 @@
                             <a href="{{ path('app_service_intranet') }}" style="text-decoration: none; background-color: #ED242E; color: white; padding: 20px; ">Lire plus</a>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <img src="/assets/images/intranet.jpg" width="350" height="350">
                     </div>
                 </div>
             </div>
         </div>
+        {% include 'components/callaction.html.twig' %}
     </div>
 {% endblock %}
